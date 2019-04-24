@@ -23,19 +23,24 @@ public class FifthTask {
         secondList.add("S4");
         secondList.add("S5");
         secondList.add("S6");
+        secondList.add("S7");
 
         Stream<String> stringStream = zip(firstList.stream(), secondList.stream());
 
         stringStream.forEach(System.out::println);
     }
 
-    //TODO
     private static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
-        Iterator iteratorForFirst = first.iterator();
-        Iterator iteratorForSecond = second.iterator();
+        Iterator<T> iteratorForFirst = first.iterator();
+        Iterator<T> iteratorForSecond = second.iterator();
 
-        IntStream.iterate(0, i->i+1);
+        List<T> listToConvert = new ArrayList<>();
 
-        return null;
+        while (iteratorForFirst.hasNext() && iteratorForSecond.hasNext()) {
+            listToConvert.add(iteratorForFirst.next());
+            listToConvert.add(iteratorForSecond.next());
+        }
+
+        return listToConvert.stream();
     }
 }
