@@ -1,6 +1,7 @@
 import task1.FirstTask;
 import task2.SecondTask;
 import task3.ThirdTask;
+import task4.FourthTask;
 import task5.FifthTask;
 
 public class Main {

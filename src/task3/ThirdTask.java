@@ -1,9 +1,9 @@
 package task3;
 
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 //Given  and collection = Arrays.asList ("1, 2, 0", "4, 5")
 //From the collection get all the numbers listed, separated by commas from all the elements

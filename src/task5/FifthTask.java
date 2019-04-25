@@ -34,13 +34,17 @@ public class FifthTask {
         Iterator<T> iteratorForFirst = first.iterator();
         Iterator<T> iteratorForSecond = second.iterator();
 
-        List<T> listToConvert = new ArrayList<>();
+        List<T> listOfItems = new ArrayList<>();
 
-        while (iteratorForFirst.hasNext() && iteratorForSecond.hasNext()) {
-            listToConvert.add(iteratorForFirst.next());
-            listToConvert.add(iteratorForSecond.next());
-        }
+        IntStream.iterate(0, i -> i++)
+                .peek(i -> {
+                    if (iteratorForFirst.hasNext() && iteratorForSecond.hasNext()) {
+                        listOfItems.add(iteratorForFirst.next());
+                        listOfItems.add(iteratorForSecond.next());
+                    }
+                })
+                .allMatch(i -> iteratorForFirst.hasNext() && iteratorForSecond.hasNext());
 
-        return listToConvert.stream();
+        return listOfItems.stream();
     }
 }
