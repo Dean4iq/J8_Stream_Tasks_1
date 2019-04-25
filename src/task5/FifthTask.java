@@ -25,9 +25,7 @@ public class FifthTask {
         secondList.add("S6");
         secondList.add("S7");
 
-        Stream<String> stringStream = zip(firstList.stream(), secondList.stream());
-
-        stringStream.forEach(System.out::println);
+        zip(firstList.stream(), secondList.stream()).forEach(System.out::println);
     }
 
     private static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
