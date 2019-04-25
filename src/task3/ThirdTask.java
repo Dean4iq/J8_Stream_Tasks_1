@@ -16,6 +16,10 @@ public class ThirdTask {
 
     private String execute(List<String> listToProcess) {
         return listToProcess.stream()
+                .map(elem -> elem.split(",\\s"))
+                .flatMap(Arrays::stream)
+                .collect(Collectors.toList())
+                .stream()
                 .collect(Collectors.joining(", "));
     }
 }
